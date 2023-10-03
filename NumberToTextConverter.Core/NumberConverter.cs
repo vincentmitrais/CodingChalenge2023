@@ -25,7 +25,6 @@ public class NumberConverter : INumberConverter
         _numberAfterComma = stringNumberAfterComma?.Length == 1 ? _numberAfterComma * 10 : _numberAfterComma;
         _numberBeforeComma = Convert.ToInt64(numberBeforeCommaString);
         _number = number;
-
     }
 
     public override string ToString()
