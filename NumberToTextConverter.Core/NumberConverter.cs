@@ -31,16 +31,16 @@ public class NumberConverter : INumberConverter
     public override string ToString()
     {
         return 
-            GenerateHundredsDozensAndBasics()
-            .GenerateThousands()
-            .GenerateMillions()
-            .GenerateBillions()
-            .GenerateTrillion()
-            .GenerateCentText()
+            GenerateTextOfHundredDozenAndBasicLevel()
+            .GenerateTextOfThousandLevel()
+            .GenerateTextOfMillionLevel()
+            .GenerateTextOfBillionLevel()
+            .GenerateTextOfTrillionLevel()
+            .GenerateTextOfCentLevel()
             ._text??string.Empty;
     }
 
-    private NumberConverter GenerateCentText()
+    private NumberConverter GenerateTextOfCentLevel()
     {
         if (_text is not null)
             _text = $"{_text} Dollar{(_numberBeforeComma > 1 ? "s" : null)}";
@@ -53,9 +53,9 @@ public class NumberConverter : INumberConverter
         return this;
     }
 
-    private NumberConverter GenerateHundredsDozensAndBasics()
+    private NumberConverter GenerateTextOfHundredDozenAndBasicLevel()
     {
-        var hundredNumber = _number.Get3DigitHundred();
+        var hundredNumber = _number.Get3DigitHundredLevel();
         var hundredText = hundredNumber.ConvertThreeDigitToText();
 
         if (hundredText is null)
@@ -67,9 +67,9 @@ public class NumberConverter : INumberConverter
     }
     
     
-    private NumberConverter GenerateThousands()
+    private NumberConverter GenerateTextOfThousandLevel()
     {
-        var number = _number.Get3DigitThousand();
+        var number = _number.Get3DigitThousandLevel();
         var text = number.ConvertThreeDigitToText();
 
         if (text is not null)
@@ -81,9 +81,9 @@ public class NumberConverter : INumberConverter
         return this;
     }
     
-    private NumberConverter GenerateMillions()
+    private NumberConverter GenerateTextOfMillionLevel()
     {
-        var number = _number.Get3DigitMillion();
+        var number = _number.Get3DigitMillionLevel();
         var text = number.ConvertThreeDigitToText();
 
         if (text is not null)
@@ -95,9 +95,9 @@ public class NumberConverter : INumberConverter
         return this;
     }
     
-    private NumberConverter GenerateBillions()
+    private NumberConverter GenerateTextOfBillionLevel()
     {  
-        var number = _number.Get3DigitBillion();
+        var number = _number.Get3DigitBillionLevel();
         var text = number.ConvertThreeDigitToText();
 
         if (text is not null)
@@ -109,9 +109,9 @@ public class NumberConverter : INumberConverter
         return this;
     }
     
-    private NumberConverter GenerateTrillion()
+    private NumberConverter GenerateTextOfTrillionLevel()
     {
-        var number = _number.Get3DigitTrillion();
+        var number = _number.Get3DigitTrillionLevel();
         var text = number.ConvertThreeDigitToText();
 
         if (text is not null)

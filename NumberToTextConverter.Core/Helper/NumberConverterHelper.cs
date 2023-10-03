@@ -61,7 +61,7 @@ public static class NumberConverterHelper
         return null;
     }
 
-    public static int Get3DigitHundred(this decimal number)
+    public static int Get3DigitHundredLevel(this decimal number)
     {
         var stringNumber = number.GetNumberBeforeComma();
         var threeDigitNumbers =  stringNumber.Substring(stringNumber.Length - 3, 3);
@@ -69,28 +69,28 @@ public static class NumberConverterHelper
     }
     
     
-    public static int Get3DigitThousand(this decimal number)
+    public static int Get3DigitThousandLevel(this decimal number)
     {
         var stringNumber = number.GetNumberBeforeComma();
         var threeDigitNumbers =  stringNumber.Substring(stringNumber.Length - 6, 3);
         return Convert.ToInt16(threeDigitNumbers);
     }
     
-    public static int Get3DigitMillion(this decimal number)
+    public static int Get3DigitMillionLevel(this decimal number)
     {
         var stringNumber = number.GetNumberBeforeComma();
         var threeDigitNumbers =  stringNumber.Substring(stringNumber.Length - 9, 3);
         return Convert.ToInt16(threeDigitNumbers);
     }
     
-    public static int Get3DigitBillion(this decimal number)
+    public static int Get3DigitBillionLevel(this decimal number)
     {
         var stringNumber = number.GetNumberBeforeComma();
         var threeDigitNumbers =  stringNumber.Substring(stringNumber.Length - 12, 3);
         return Convert.ToInt16(threeDigitNumbers);
     }
     
-    public static int Get3DigitTrillion(this decimal number)
+    public static int Get3DigitTrillionLevel(this decimal number)
     {
         var stringNumber = number.GetNumberBeforeComma();
         var threeDigitNumbers =  stringNumber.Substring(stringNumber.Length - 15, 3);
