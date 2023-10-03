@@ -36,18 +36,29 @@ public class NumberConverter : INumberConverter
             .GenerateTextOfMillionLevel()
             .GenerateTextOfBillionLevel()
             .GenerateTextOfTrillionLevel()
+            .AddDollarWord()
             .GenerateTextOfCentLevel()
             ._text??string.Empty;
     }
 
-    private NumberConverter GenerateTextOfCentLevel()
+    private string? Space => _text is null ? null : " ";
+
+
+    private NumberConverter AddDollarWord()
     {
         if (_text is not null)
             _text = $"{_text} Dollar{(_numberBeforeComma > 1 ? "s" : null)}";
-            
-        var centText = _numberAfterComma.ConvertThreeDigitToText();
         
-        if (centText is not null)
+        return this;
+    }
+    
+    
+    private NumberConverter GenerateTextOfCentLevel()
+    {
+        if (_numberAfterComma == 0)
+            return this;
+        
+        var centText = _numberAfterComma.ConvertThreeDigitToText();
             _text = $"{_text}{(_text is not null? " and " : null)}{centText} Cent{(_numberAfterComma > 1 ? "s" : null)}";
         
         return this;
@@ -56,11 +67,11 @@ public class NumberConverter : INumberConverter
     private NumberConverter GenerateTextOfHundredDozenAndBasicLevel()
     {
         var hundredNumber = _number.Get3DigitHundredLevel();
-        var hundredText = hundredNumber.ConvertThreeDigitToText();
-
-        if (hundredText is null)
+        
+        if (hundredNumber == 0)
             return this;
         
+        var hundredText = hundredNumber.ConvertThreeDigitToText();
         _text = $"{hundredText}{(_text is null ? null : " and ")}{_text}";
 
         return this;
@@ -70,13 +81,12 @@ public class NumberConverter : INumberConverter
     private NumberConverter GenerateTextOfThousandLevel()
     {
         var number = _number.Get3DigitThousandLevel();
-        var text = number.ConvertThreeDigitToText();
 
-        if (text is not null)
-            text = $"{text} Thousand";
+        if (number == 0)
+            return this;
         
-        if (text is not null)
-            _text = $"{text}{(_text is null ? null : " ")}{_text}";
+        var text = $"{number.ConvertThreeDigitToText()} Thousand";
+        _text = $"{text}{Space}{_text}";
 
         return this;
     }
@@ -84,13 +94,12 @@ public class NumberConverter : INumberConverter
     private NumberConverter GenerateTextOfMillionLevel()
     {
         var number = _number.Get3DigitMillionLevel();
-        var text = number.ConvertThreeDigitToText();
-
-        if (text is not null)
-            text = $"{text} Million";
         
-        if (text is not null)
-            _text = $"{text}{(_text is null ? null : " ")}{_text}";
+        if (number == 0)
+            return this;
+        
+        var text =$"{number.ConvertThreeDigitToText()} Million";
+        _text = $"{text}{Space}{_text}";
 
         return this;
     }
@@ -98,13 +107,11 @@ public class NumberConverter : INumberConverter
     private NumberConverter GenerateTextOfBillionLevel()
     {  
         var number = _number.Get3DigitBillionLevel();
-        var text = number.ConvertThreeDigitToText();
-
-        if (text is not null)
-            text = $"{text} Billion";
+        if (number == 0)
+            return this;
         
-        if (text is not null)
-            _text = $"{text}{(_text is null ? null : " ")}{_text}";
+        var text = $"{number.ConvertThreeDigitToText()} Billion";
+        _text = $"{text}{Space}{_text}";
 
         return this;
     }
@@ -112,13 +119,12 @@ public class NumberConverter : INumberConverter
     private NumberConverter GenerateTextOfTrillionLevel()
     {
         var number = _number.Get3DigitTrillionLevel();
-        var text = number.ConvertThreeDigitToText();
 
-        if (text is not null)
-            text = $"{text} Trillion";
+        if (number == 0)
+            return this;
         
-        if (text is not null)
-            _text = $"{text}{(_text is null ? null : " ")}{_text}";
+        var text = $"{number.ConvertThreeDigitToText()} Trillion";
+        _text = $"{text}{Space}{_text}";
 
         return this;
     }
