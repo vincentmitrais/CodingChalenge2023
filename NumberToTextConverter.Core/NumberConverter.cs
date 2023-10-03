@@ -31,11 +31,11 @@ public class NumberConverter : INumberConverter
     public override string ToString()
     {
         return 
-            GenerateTextOfHundredDozenAndBasicLevel()
-            .GenerateTextOfThousandLevel()
-            .GenerateTextOfMillionLevel()
+            GenerateTextOfTrillionLevel()
             .GenerateTextOfBillionLevel()
-            .GenerateTextOfTrillionLevel()
+            .GenerateTextOfMillionLevel()
+            .GenerateTextOfThousandLevel()
+            .GenerateTextOfHundredDozenAndBasicLevel()
             .AddDollarWord()
             .GenerateTextOfCentLevel()
             ._text??string.Empty;
@@ -72,7 +72,7 @@ public class NumberConverter : INumberConverter
             return this;
         
         var hundredText = hundredNumber.ConvertThreeDigitToText();
-        _text = $"{hundredText}{(_text is null ? null : " and ")}{_text}";
+        _text = $"{_text}{Space}{hundredText}";
 
         return this;
     }
@@ -86,7 +86,7 @@ public class NumberConverter : INumberConverter
             return this;
         
         var text = $"{number.ConvertThreeDigitToText()} Thousand";
-        _text = $"{text}{Space}{_text}";
+        _text = $"{_text}{Space}{text}";
 
         return this;
     }
@@ -99,7 +99,7 @@ public class NumberConverter : INumberConverter
             return this;
         
         var text =$"{number.ConvertThreeDigitToText()} Million";
-        _text = $"{text}{Space}{_text}";
+        _text = $"{_text}{Space}{text}";
 
         return this;
     }
@@ -111,7 +111,7 @@ public class NumberConverter : INumberConverter
             return this;
         
         var text = $"{number.ConvertThreeDigitToText()} Billion";
-        _text = $"{text}{Space}{_text}";
+        _text = $"{_text}{Space}{text}";
 
         return this;
     }
@@ -124,7 +124,7 @@ public class NumberConverter : INumberConverter
             return this;
         
         var text = $"{number.ConvertThreeDigitToText()} Trillion";
-        _text = $"{text}{Space}{_text}";
+        _text = $"{_text}{Space}{text}";
 
         return this;
     }
