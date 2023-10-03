@@ -1,0 +1,14 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=7e624fa1_002De097_002D47be_002Dbfa4_002Daa655f068323/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="All tests from ThousandTest.cs" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;Or&gt;&#xD;
+    &lt;ProjectFile&gt;3424078E-1080-4EC6-B85F-F6517F33B4FE/f:ThousandTest.cs&lt;/ProjectFile&gt;&#xD;
+    &lt;ProjectFile&gt;3424078E-1080-4EC6-B85F-F6517F33B4FE/f:BoundaryTest.cs&lt;/ProjectFile&gt;&#xD;
+    &lt;ProjectFile&gt;3424078E-1080-4EC6-B85F-F6517F33B4FE/f:CentTest.cs&lt;/ProjectFile&gt;&#xD;
+    &lt;ProjectFile&gt;3424078E-1080-4EC6-B85F-F6517F33B4FE/f:BasicNumberTest.cs&lt;/ProjectFile&gt;&#xD;
+    &lt;ProjectFile&gt;3424078E-1080-4EC6-B85F-F6517F33B4FE/f:DozenTest.cs&lt;/ProjectFile&gt;&#xD;
+    &lt;ProjectFile&gt;3424078E-1080-4EC6-B85F-F6517F33B4FE/f:hundredTest.cs&lt;/ProjectFile&gt;&#xD;
+    &lt;ProjectFile&gt;3424078E-1080-4EC6-B85F-F6517F33B4FE/f:MillionTest.cs&lt;/ProjectFile&gt;&#xD;
+    &lt;ProjectFile&gt;3424078E-1080-4EC6-B85F-F6517F33B4FE/f:BillionTest.cs&lt;/ProjectFile&gt;&#xD;
+    &lt;ProjectFile&gt;3424078E-1080-4EC6-B85F-F6517F33B4FE/f:TrillionTest.cs&lt;/ProjectFile&gt;&#xD;
+  &lt;/Or&gt;&#xD;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
