@@ -79,6 +79,9 @@ public class NumberConverter : INumberConverter
     
     private NumberConverter GenerateTextOfThousandLevel()
     {
+        if (_numberBeforeComma < 1_000)
+            return this;
+        
         var number = _number.Get3DigitThousandLevel();
 
         if (number == 0)
@@ -92,6 +95,9 @@ public class NumberConverter : INumberConverter
     
     private NumberConverter GenerateTextOfMillionLevel()
     {
+        if (_numberBeforeComma < 1_000_000)
+            return this;
+        
         var number = _number.Get3DigitMillionLevel();
         
         if (number == 0)
@@ -104,7 +110,10 @@ public class NumberConverter : INumberConverter
     }
     
     private NumberConverter GenerateTextOfBillionLevel()
-    {  
+    {
+        if (_numberBeforeComma < 1_000_000_000)
+            return this;
+        
         var number = _number.Get3DigitBillionLevel();
         if (number == 0)
             return this;
@@ -117,8 +126,10 @@ public class NumberConverter : INumberConverter
     
     private NumberConverter GenerateTextOfTrillionLevel()
     {
+        if (_numberBeforeComma < 1_000_000_000_000)
+            return this;
+        
         var number = _number.Get3DigitTrillionLevel();
-
         if (number == 0)
             return this;
         
